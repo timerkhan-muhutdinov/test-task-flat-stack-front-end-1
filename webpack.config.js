@@ -11,8 +11,8 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'app.js',
-        publicPath: '/js'
+        filename: 'js/app.js',
+        publicPath: './'
     },
 
     devServer: {
@@ -24,18 +24,6 @@ module.exports = {
 
     module: {
         rules: [
-            {
-                test: /\.(woff2?|ttf|otf|eot|svg)$/,
-                exclude: /node_modules/,
-                loader: 'file-loader',
-                options: {
-                    name: 'fonts/[name].[ext]'
-                }
-            },
-            {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
-            },
             {
                 test: /\.(sass|scss)$/,
                 use: ExtractTextPlugin.extract(
@@ -49,22 +37,33 @@ module.exports = {
                 include: path.resolve(__dirname, 'src/'),
                 use: ['raw-loader']
             },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                include: [/fonts/],
+          
+                options: {
+                  name: '[name].[ext]',
+                  outputPath: 'fonts/',
+                  publicPath: url => '../fonts/' + url
+                }
+              },
         ]
     },
-    plugins: [
-        new CopyWebpackPlugin([
-            {
-                from: './src/img',
-                to: './img'
-            }
-        ]),
+    plugins: [        
         new ExtractTextPlugin({
-            filename: './css/style.bundle.css',
+            filename: 'css/app.css',
             allChunks: true,
         }),
         new HtmlWebpackPlugin({
             template: __dirname + "/src/index.html",
             inject: 'body'
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: './src/img',
+                to: './img'
+            },
+        ])
     ]
 };

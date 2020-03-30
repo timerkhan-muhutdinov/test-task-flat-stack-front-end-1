@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="css/style.bundle.css" />
 </head>
 
 <body>
@@ -65,8 +64,14 @@
                         <label>Recipient: </label>
                         <input class="input" placeholder="Full Name" name="fullName">
                         <div class="d-fx fx-align-cnt-center">
-                            <input class="input basis-60 grow-4  mrgn-r-10" placeholder="Daytime Phone" name="phone">
-                            <p class="basis-40 grow-1">For delivery <br />questions only</p>
+                            <input class="input basis-60 grow-4  mrgn-r-10" 
+                                    placeholder="Daytime Phone" 
+                                    data-mask="+7 (000) 000-00-00"
+                                    pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                                    type="tel" 
+                                    name="phone"
+                                    >
+                                <p class="basis-40 grow-1">For delivery <br />questions only</p>
                         </div>
                     </div>
                     <div class="form-item">
@@ -87,7 +92,7 @@
                 </div>
 
                 <div class="form-item">
-                    <button class="button" type="button" >Continue</button>
+                    <button class="button" type="submit" >Continue</button>
                 </div>
             </form>
             <section class="main__orders">
