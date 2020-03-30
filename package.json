@@ -4,6 +4,8 @@
     "private": true,
     "scripts": {
         "start": "webpack-dev-server --mode development --open",
+        "watch": "webpack --mode development --watch",
+        "dev": "npm run watch & npm run start",
         "build": "webpack --mode production"
     },
     "devDependencies": {
@@ -11,6 +13,8 @@
         "css-loader": "^3.4.2",
         "extract-text-webpack-plugin": "^4.0.0-alpha.0",
         "file-loader": "^6.0.0",
+        "html-cli": "^1.0.0",
+        "html-loader": "^1.0.0",
         "html-webpack-plugin": "^4.0.3",
         "node-sass": "^4.13.1",
         "raw-loader": "^4.0.0",

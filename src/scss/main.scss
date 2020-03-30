@@ -1,0 +1,15 @@
+.main{ 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+    &__content{
+        margin: auto 0;
+        background: white;
+        width: 700px;
+        height: 600px;    
+    }
+
+}

@@ -2,23 +2,6 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const fs = require('fs')
-
-function generateHtmlPlugins(templateDir) {
-    const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-    return templateFiles.map(item => {
-        const parts = item.split('.');
-        const name = parts[0];
-        const extension = parts[1];
-        return new HtmlWebpackPlugin({
-            filename: `${name}.html`,
-            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
-            inject: false,
-        })
-    })
-}
-
-const htmlPlugins = generateHtmlPlugins('./src/html/views')
 
 module.exports = {
     entry: [
@@ -63,7 +46,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                include: path.resolve(__dirname, 'src/html/includes'),
+                include: path.resolve(__dirname, 'src/'),
                 use: ['raw-loader']
             },
         ]
@@ -79,6 +62,9 @@ module.exports = {
             filename: './css/style.bundle.css',
             allChunks: true,
         }),
+        new HtmlWebpackPlugin({
+            template: __dirname + "/src/index.html",
+            inject: 'body'
+        })
     ]
-    .concat(htmlPlugins)
 };
