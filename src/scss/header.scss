@@ -4,6 +4,7 @@
     font-family: 'Helvetica Neue';
     font-weight: 300; 
     font-style: normal;
+    justify-content: center;
        
     border-bottom: 1px solid rgba(210, 121, 166, 0.28);
     -moz-border-image: -moz-linear-gradient(270deg, #7E00E8 0%, #FF1876 54%, #BB0CB2 100%);
@@ -12,9 +13,9 @@
     border-image-slice: 1;
 
     &__content{
+        width: 1000px;
         height: 100%;
-        display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;      
     }
 
@@ -38,6 +39,7 @@
             align-items: center;
             font-size: 16px; 
             letter-spacing: 2px;
+            justify-content: end;
             
             svg{
                 margin-left: 5px;
