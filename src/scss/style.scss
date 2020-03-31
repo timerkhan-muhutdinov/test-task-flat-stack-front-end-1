@@ -13,6 +13,7 @@ body {
 .d-fx{
     display: flex;
 }
+
     .grow-1{
         flex-grow: 1;
     }
@@ -66,7 +67,7 @@ body {
     .fx-jstf-cnt-between{
         justify-content: space-between;
     }
-    .fx-jstf-cnt-between{
+    .fx-jstf-cnt-center{
         justify-content: center;
     }
 

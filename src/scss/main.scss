@@ -33,7 +33,7 @@
             padding: 0;
             white-space: nowrap;
 
-            &__item {
+            .steps__item {
                 display: inline-block;
                 line-height: 18px;
                 margin: 0 10px 0 -17px;
@@ -72,14 +72,15 @@
                     opacity: 0.8;
                 } 
 
-                &.on span {
+                &.steps__item--on span {
                     color: #5A1094 !important;
                   }
             }            
         }   
 
         &__tab{
-
+            display: none;
+            
             .form-item{
                 margin: 15px 0;
 
@@ -100,7 +101,20 @@
                     line-height: 12px;
                     color: #777879;
                 }
-            }            
+            }    
+            
+            .title{
+                &__heading{
+                    width: 50%;
+                    display: inline-block;
+                }
+
+                &__link{
+                    text-align: right;
+                    width: 48%;
+                    display: inline-block;
+                }
+            }
         }        
 
         .button{

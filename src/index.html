@@ -51,13 +51,15 @@
 
     <main class="main">
         <div class="main__content">
-            <form class="order-form">
+            <form class="order-form" onsubmit="return false">
                 <ul class="order-form__steps">
-                    <li class="order-form__steps__item on"><span>Shipping</span></li>
-                    <li class="order-form__steps__item finished"><span>Billing</span></li>
-                    <li class="order-form__steps__item"><span>Payment</span></li>
+                    <li class="steps__item steps__item--on"><span>Shipping</span></li>
+                    <li class="steps__item finished"><span>Billing</span></li>
+                    <li class="steps__item"><span>Payment</span></li>
                 </ul>
-                <div class="order-form__tab">
+
+                <!-- Step 1 -->
+                <div class="order-form__tab" data-step="0">
                     <h2>Shipping Info</h2>
 
                     <div class="form-item">
@@ -90,8 +92,39 @@
                     </div>
                 </div>
 
+                <!-- Step 2 -->
+                <div class="order-form__tab" data-step="0">
+                    <div class="title">                        
+                        <div class="title__heading">
+                            <h2>Billing Address</h2>
+                        </div>
+                        <div class="title__link">
+                            <a href="">Same as shipping</a>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label>Billing Contact: </label>
+                        <input class="input" placeholder="Full Name" name="fullName">
+                        <input class="input" placeholder="Email Address" name="email">                        
+                    </div>
+                    <div class="form-item">
+                        <label>Address: </label>
+                        <input class="input geo" placeholder="Street Address" >
+                        <input class="input" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" >
+                    </div>
+                    <div class="form-item">
+                        <input id="city" class="input" placeholder="City" >
+                    </div>
+                    <div class="form-item d-fx">
+                        <select id="countries" class="input basis-60 grow-4 mrgn-r-10" placeholder="Country" >
+                            <option value="Country" style="display:none; ">Country</option>
+                        </select>
+                        <input id="zip"  class="input basis-40" placeholder="ZIP" >
+                    </div>
+                </div>
+
                 <div class="form-item">
-                    <button class="button" type="submit" >Continue</button>
+                    <button id="button" class="button">Continue</button>
                 </div>
             </form>
             <section class="main__orders">
