@@ -51,112 +51,123 @@
 
     <main class="main">
         <div class="main__content">
-            <form class="order-form" onsubmit="return false">
-                <ul class="order-form__steps">
-                    <li class="steps__item"><span>Shipping</span></li>
-                    <li class="steps__item"><span>Billing</span></li>
-                    <li class="steps__item"><span>Payment</span></li>
-                </ul>
+            <div style="width: 600px;">
+                <form class="order-form" onsubmit="return false" name="order">
+                    <ul class="order-form__steps">
+                        <li class="steps__item"><span>Shipping</span></li>
+                        <li class="steps__item"><span>Billing</span></li>
+                        <li class="steps__item"><span>Payment</span></li>
+                    </ul>
 
-                <!-- Step 1 -->
-                <div class="order-form__tab" data-step="0">
-                    <h2>Shipping Info</h2>
+                    <!-- Step 1 -->
+                    <div class="order-form__tab" data-step="0">
+                        <h2>Shipping Info</h2>
 
-                    <div class="form-item">
-                        <label>Recipient: </label>
-                        <input class="input" placeholder="Full Name" name="fullName">
-                        <div class="d-fx fx-align-cnt-center">
-                            <input class="input basis-60 grow-4  mrgn-r-10" 
-                                    placeholder="Daytime Phone" 
-                                    data-mask="+7 (000) 000-00-00"
-                                    pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
-                                    type="tel" 
-                                    name="phone"
-                                    >
-                                <p class="basis-40 grow-1">For delivery <br />questions only</p>
+                        <div class="form-item">
+                            <label>Recipient: </label>
+                            <input class="input" placeholder="Full Name" name="shipping.fullName">
+                            <div class="d-fx fx-align-cnt-center">
+                                <input class="input basis-60 grow-4  mrgn-r-10" 
+                                        placeholder="Daytime Phone" 
+                                        data-mask="+7 (000) 000-00-00"
+                                        pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                                        type="tel" 
+                                        name="shipping.phone"
+                                        >
+                                    <p class="basis-40 grow-1">For delivery <br />questions only</p>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Address: </label>
+                            <input class="input geo" placeholder="Street Address" name="shipping.street">
+                            <input class="input" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" name="shipping.address">
+                        </div>
+                        <div class="form-item">
+                            <input id="city" class="input" placeholder="City" name="shipping.city">
+                        </div>
+                        <div class="form-item d-fx">
+                            <select id="countries" class="input basis-60 grow-4 mrgn-r-10" placeholder="Country" name="shipping.country">
+                                <option value="Country" style="display:none;">Country</option>
+                            </select>
+                            <input id="zip"  class="input basis-40" placeholder="ZIP" name="shipping.zip">
                         </div>
                     </div>
+
+                    <!-- Step 2 -->
+                    <div class="order-form__tab" data-step="0">
+                        <div class="title">                        
+                            <div class="title__heading">
+                                <h2>Billing Address</h2>
+                            </div>
+                            <div class="title__link">
+                                <a href="">Same as shipping</a>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <label>Billing Contact: </label>
+                            <input class="input" placeholder="Full Name" name="billing.fullName">
+                            <input class="input" placeholder="Email Address" name="billing.email">                        
+                        </div>
+                        <div class="form-item">
+                            <label>Address: </label>
+                            <input class="input geo" placeholder="Street Address"  name="billing.street">
+                            <input class="input" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" name="billing.address">
+                        </div>
+                        <div class="form-item">
+                            <input id="city" class="input" placeholder="City" name="billing.city">
+                        </div>
+                        <div class="form-item d-fx">
+                            <select id="countries" class="input basis-60 grow-4 mrgn-r-10" placeholder="Country" name="billing.country">
+                                <option value="Country" style="display:none; ">Country</option>
+                            </select>
+                            <input id="zip"  class="input basis-40" placeholder="ZIP" name="billing.zip">
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="order-form__tab" data-step="0">
+                        <h2>Payment</h2>
+
+                        <div>
+                            <span><span>
+                            <p>This is a secure 128-bit SSL encrypted payment</p>
+                        </div>
+                        <div class="form-item">
+                            <label>Cardholder Name: </label>
+                            <input class="input" placeholder="Name as it appears on your card" name="card.fullName">
+                        </div>
+
+                        <div class="form-item">
+                            <label>Card Number: </label>
+                            <input class="input" data-mask="0000 0000 0000 0000 0000" type="tel" placeholder="XXXX XXXX XXXX XXXX XXXX" name="card.number">
+                        </div>
+
+                        <div class="d-fx">
+                            <div class="form-item mrgn-r-10 basis-30 ">                        
+                                <label>Expire Date: </label>
+                                <input class="input" data-mask="00 / 00" type="tel" placeholder="MM / YY" name="card.date">
+                            </div>
+                            <div class="form-item basis-30">
+                                <label>Security Code: </label>
+                                <input class="input" data-mask="000" type="tel" placeholder="CVC" name="card.cvc">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-item">
-                        <label>Address: </label>
-                        <input class="input geo" placeholder="Street Address" >
-                        <input class="input" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" >
+                        <button id="button" class="button">Continue</button>
                     </div>
-                    <div class="form-item">
-                        <input id="city" class="input" placeholder="City" >
-                    </div>
-                    <div class="form-item d-fx">
-                        <select id="countries" class="input basis-60 grow-4 mrgn-r-10" placeholder="Country" >
-                            <option value="Country" style="display:none; ">Country</option>
-                        </select>
-                        <input id="zip"  class="input basis-40" placeholder="ZIP" >
-                    </div>
+                </form>
+                <div class="success" style="display: none;">
+                    <h2>Thank you for your order!</h2>
+                    <p><strong>Order number is: 188787788 </strong></p>
+                    <p>Your will recieve an email confirmation <br>
+                        shortly to <a href="mailto:jonathan.smith@gmail.com">jonathan.smith@gmail.com</a></p>
+                    <p>Estimated delivery Day is <br>
+                        <b>Friday 1st April 2016</b></p>
+                    <a href="">Print Recipe</a>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="order-form__tab" data-step="0">
-                    <div class="title">                        
-                        <div class="title__heading">
-                            <h2>Billing Address</h2>
-                        </div>
-                        <div class="title__link">
-                            <a href="">Same as shipping</a>
-                        </div>
-                    </div>
-                    <div class="form-item">
-                        <label>Billing Contact: </label>
-                        <input class="input" placeholder="Full Name" name="fullName">
-                        <input class="input" placeholder="Email Address" name="email">                        
-                    </div>
-                    <div class="form-item">
-                        <label>Address: </label>
-                        <input class="input geo" placeholder="Street Address" >
-                        <input class="input" placeholder="Apt, Suite, Bldg, Gate Code. (optional)" >
-                    </div>
-                    <div class="form-item">
-                        <input id="city" class="input" placeholder="City" >
-                    </div>
-                    <div class="form-item d-fx">
-                        <select id="countries" class="input basis-60 grow-4 mrgn-r-10" placeholder="Country" >
-                            <option value="Country" style="display:none; ">Country</option>
-                        </select>
-                        <input id="zip"  class="input basis-40" placeholder="ZIP" >
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="order-form__tab" data-step="0">
-                    <h2>Payment</h2>
-
-                    <div>
-                        <span><span>
-                        <p>This is a secure 128-bit SSL encrypted payment</p>
-                    </div>
-                    <div class="form-item">
-                        <label>Cardholder Name: </label>
-                        <input class="input" placeholder="Name as it appears on your card" >
-                    </div>
-
-                    <div class="form-item">
-                        <label>Card Number: </label>
-                        <input class="input" data-mask="0000 0000 0000 0000 0000" placeholder="XXXX XXXX XXXX XXXX XXXX" >
-                    </div>
-
-                    <div class="d-fx">
-                        <div class="form-item mrgn-r-10 basis-30 ">                        
-                            <label>Expire Date: </label>
-                            <input class="input" data-mask="00 / 00"  placeholder="MM / YY" >
-                        </div>
-                        <div class="form-item basis-30">
-                            <label>Security Code: </label>
-                            <input class="input" data-mask="000" placeholder="VVV" >
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-item">
-                    <button id="button" class="button">Continue</button>
-                </div>
-            </form>
+            </div>
             <section class="main__orders">
                 
             </section>

@@ -20,8 +20,7 @@
         opacity: 0.5;
     }
 
-    .order-form{
-        width: 600px;
+    .order-form{        
         text-align: left;
         padding: 25px 40px 45px 40px;
 
@@ -126,6 +125,20 @@
             border: 1px solid rgba(67, 28, 93, 0.8);
             border-radius: 5px;
             padding: 13px 60px;
+        }
+    }
+
+    .success{
+        text-align: left;
+        padding: 45px 40px 45px 40px;
+
+        p{
+            color: #2B2525;
+        }
+
+        a{
+            color: #5A1094;
+            font-weight: 400;
         }
     }
 }

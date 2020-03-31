@@ -178,7 +178,6 @@
     background: #E6E9F0;
     opacity: 0.5; }
   .main .order-form {
-    width: 600px;
     text-align: left;
     padding: 25px 40px 45px 40px; }
     .main .order-form__steps {
@@ -255,6 +254,14 @@
       border: 1px solid rgba(67, 28, 93, 0.8);
       border-radius: 5px;
       padding: 13px 60px; }
+  .main .success {
+    text-align: left;
+    padding: 45px 40px 45px 40px; }
+    .main .success p {
+      color: #2B2525; }
+    .main .success a {
+      color: #5A1094;
+      font-weight: 400; }
 
 body {
   background-color: #F2F2F2;
