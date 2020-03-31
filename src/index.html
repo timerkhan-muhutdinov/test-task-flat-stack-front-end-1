@@ -123,6 +123,36 @@
                     </div>
                 </div>
 
+                <!-- Step 3 -->
+                <div class="order-form__tab" data-step="0">
+                    <h2>Payment</h2>
+
+                    <div>
+                        <span><span>
+                        <p>This is a secure 128-bit SSL encrypted payment</p>
+                    </div>
+                    <div class="form-item">
+                        <label>Cardholder Name: </label>
+                        <input class="input" placeholder="Name as it appears on your card" >
+                    </div>
+
+                    <div class="form-item">
+                        <label>Card Number: </label>
+                        <input class="input" data-mask="0000 0000 0000 0000 0000" placeholder="XXXX XXXX XXXX XXXX XXXX" >
+                    </div>
+
+                    <div class="d-fx">
+                        <div class="form-item mrgn-r-10 basis-30 ">                        
+                            <label>Expire Date: </label>
+                            <input class="input" data-mask="00 / 00"  placeholder="MM / YY" >
+                        </div>
+                        <div class="form-item basis-30">
+                            <label>Security Code: </label>
+                            <input class="input" data-mask="000" placeholder="VVV" >
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-item">
                     <button id="button" class="button">Continue</button>
                 </div>

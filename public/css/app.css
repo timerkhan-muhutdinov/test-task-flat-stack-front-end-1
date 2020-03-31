@@ -221,7 +221,8 @@
         .main .order-form__steps .steps__item.steps__item--on span {
           color: #5A1094 !important; }
     .main .order-form__tab {
-      display: none; }
+      display: none;
+      font-weight: normal; }
       .main .order-form__tab .form-item {
         margin: 15px 0; }
         .main .order-form__tab .form-item .input {
