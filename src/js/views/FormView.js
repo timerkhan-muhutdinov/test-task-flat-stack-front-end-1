@@ -13,16 +13,20 @@ class FormView extends EventEmitter {
         this.refHandlerNext = this.handleNext.bind(this);
         this.button.addEventListener('click', this.refHandlerNext);
         this.btnCopy.addEventListener('click', this.handleCopy.bind(this));
+
     }
 
     handleNext() {
+        const multiStep = document.querySelector(".steps__item--on");
+        if (multiStep != null && !this.validateForm(multiStep)) return false;
+
         this.emit('changeTab');
     }
 
     handlePrint() {
         var content = document.querySelector(".main__content .print-content").innerHTML;
 
-        var WinPrint = window.open('','','left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0');
+        var WinPrint = window.open('', '', 'left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0');
         WinPrint.document.write('');
         WinPrint.document.write(content);
         WinPrint.document.write('');
@@ -43,6 +47,9 @@ class FormView extends EventEmitter {
     }
 
     handleSubmit() {
+        const multiStep = document.querySelector(".steps__item--on");
+        if (multiStep != null && !this.validateForm(multiStep)) return false;
+
         let elements = this.form.elements;
         const data = {
             shipping: {
@@ -68,7 +75,7 @@ class FormView extends EventEmitter {
                 number: elements["card.number"].value,
                 date: elements["card.date"].value,
                 cvc: elements["card.cvc"].value,
-                
+
             }
         }
 
@@ -92,15 +99,14 @@ class FormView extends EventEmitter {
 
         this.tabs[newTab].style.display = "block";
 
-        if((this.tabs.length - newTab) == 1)
-        {
+        if ((this.tabs.length - newTab) == 1) {
             this.button.innerHTML = "Pay Securely";
             this.button.removeEventListener('click', this.refHandlerNext);
             this.button.addEventListener('click', this.handleSubmit.bind(this));
         }
     }
 
-    showSuccess(data){
+    showSuccess(data) {
         console.log("showSuccess", data);
         this.form.style.display = "none";
 
@@ -111,9 +117,38 @@ class FormView extends EventEmitter {
         <p>Estimated delivery Day is <br>
             <b>${data.deliveryDate.toDateString()}</b></p></div>
         <a id="btnPrint" href="javascript:void(0);">Print Recipe</a>`;
-        
+
         var btnPrint = document.querySelector("#btnPrint");
         btnPrint.addEventListener('click', this.handlePrint.bind(this));
+    }
+
+    validateForm(data) {
+        const multiSteps = document.getElementsByClassName("steps__item");
+        const x = [].indexOf.call(multiSteps, data);
+
+        let valid = true;
+        
+        valid = this.validateElements(this.tabs[x].getElementsByTagName("input"), valid);      
+        valid = this.validateElements(this.tabs[x].getElementsByTagName("select"), valid);        
+
+        return valid; // return the valid status
+    }
+
+    validateElements(inputs, valid){
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].setCustomValidity('');
+
+            if (inputs[i].classList.contains("input-invalid")) inputs[i].classList.remove("input-invalid");
+            if(!inputs[i].checkValidity()) inputs[i].classList.add("input-invalid");
+            
+            if (!inputs[i].reportValidity() && valid) {
+                
+                inputs[i].setCustomValidity(`Please enter recipient ${inputs[i].placeholder.toLowerCase()}`);
+                valid = false;
+            }
+        }
+
+        return valid;
     }
 }
 
