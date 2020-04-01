@@ -85,9 +85,12 @@
                         </div>
                         <div class="form-item">
                             <div class="geo">
-                                <input class="input city" placeholder="City" name="billing.city">
-                                <a href="javascript:void(0);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.486 0 0 4.486 0 10C0 15.5138 4.486 20 10 20C15.514 20 20 15.5138 20 10C20 4.486 15.514 0 10 0ZM10.8064 13.6452H9.1936V18.3476C5.2114 17.9658 2.0342 14.7886 1.6526 10.8064H6.355V9.1936H1.6526C2.0344 5.2114 5.2114 2.0344 9.1936 1.6526V6.3548H10.8064V1.6526C14.7886 2.0342 17.9658 5.2112 18.3474 9.1936H13.6452V10.8064H18.3476C17.9658 14.7886 14.7886 17.9658 10.8064 18.3474V13.6452Z" fill="#431C5D"/>
+                                <input class="input city" placeholder="City" name="shipping.city">
+                                <a href="javascript:void(0);"><svg width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10 0C4.486 0 0 4.486 0 10C0 15.5138 4.486 20 10 20C15.514 20 20 15.5138 20 10C20 4.486 15.514 0 10 0ZM10.8064 13.6452H9.1936V18.3476C5.2114 17.9658 2.0342 14.7886 1.6526 10.8064H6.355V9.1936H1.6526C2.0344 5.2114 5.2114 2.0344 9.1936 1.6526V6.3548H10.8064V1.6526C14.7886 2.0342 17.9658 5.2112 18.3474 9.1936H13.6452V10.8064H18.3476C17.9658 14.7886 14.7886 17.9658 10.8064 18.3474V13.6452Z"
+                                            fill="#431C5D" />
                                     </svg>
                                 </a>
                             </div>
@@ -119,15 +122,18 @@
                         </div>
                         <div class="form-item">
                             <label>Address: </label>
-                            <input class="input" placeholder="Street Address" name="shipping.street" required>
+                            <input class="input" placeholder="Street Address" name="billing.street" required>
                             <input class="input" placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
                                 name="billing.address" required>
                         </div>
                         <div class="form-item">
                             <div class="geo">
                                 <input class="city input" placeholder="City" name="billing.city">
-                                <a href="javascript:void(0);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.486 0 0 4.486 0 10C0 15.5138 4.486 20 10 20C15.514 20 20 15.5138 20 10C20 4.486 15.514 0 10 0ZM10.8064 13.6452H9.1936V18.3476C5.2114 17.9658 2.0342 14.7886 1.6526 10.8064H6.355V9.1936H1.6526C2.0344 5.2114 5.2114 2.0344 9.1936 1.6526V6.3548H10.8064V1.6526C14.7886 2.0342 17.9658 5.2112 18.3474 9.1936H13.6452V10.8064H18.3476C17.9658 14.7886 14.7886 17.9658 10.8064 18.3474V13.6452Z" fill="#431C5D"/>
+                                <a href="javascript:void(0);"><svg width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.8" fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M10 0C4.486 0 0 4.486 0 10C0 15.5138 4.486 20 10 20C15.514 20 20 15.5138 20 10C20 4.486 15.514 0 10 0ZM10.8064 13.6452H9.1936V18.3476C5.2114 17.9658 2.0342 14.7886 1.6526 10.8064H6.355V9.1936H1.6526C2.0344 5.2114 5.2114 2.0344 9.1936 1.6526V6.3548H10.8064V1.6526C14.7886 2.0342 17.9658 5.2112 18.3474 9.1936H13.6452V10.8064H18.3476C17.9658 14.7886 14.7886 17.9658 10.8064 18.3474V13.6452Z"
+                                            fill="#431C5D" />
                                     </svg>
                                 </a>
                             </div>
@@ -146,9 +152,15 @@
                     <div class="order-form__tab" data-step="0">
                         <h2>Payment</h2>
 
-                        <div>
-                            <span><span>
-                                    <p>This is a secure 128-bit SSL encrypted payment</p>
+                        <div class="security-info d-fx fx-align-cnt-center fx-content-cnt-start">
+                            <div class="mrgn-r-10"><svg width="19" height="26" viewBox="0 0 19 26" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.4006 14.5071V10.1378C14.4006 9.85407 14.171 9.62412 13.8877 9.62412H12.6984V5.50597C12.6984 2.47008 10.2318 0 7.20015 0C4.16852 0 1.70192 2.47008 1.70192 5.50597V9.59601H2.72775V5.50597C2.72775 3.03652 4.73417 1.02727 7.20015 1.02727C9.66614 1.02727 11.6726 3.0362 11.6726 5.50597V9.62412H0.512603C0.229314 9.62412 0 9.85407 0 10.1378V18.5931C0 19.5969 0.811803 20.4099 1.80987 20.4099H8.11179C8.37137 23.183 10.7069 25.361 13.5429 25.361C16.3659 25.361 18.7008 23.2417 18.9741 20.4317C18.9913 20.2549 19 20.0746 19 19.8959C19.0003 18.5568 18.5114 17.2681 17.6235 16.2673C16.7805 15.3176 15.6367 14.7049 14.4006 14.5071Z"
+                                        fill="#6B6B6B" />
+                                </svg>
+                            </div>
+                            <p> This is a secure 128-bit SSL encrypted payment</p>
                         </div>
                         <div class="form-item">
                             <label>Cardholder Name: </label>

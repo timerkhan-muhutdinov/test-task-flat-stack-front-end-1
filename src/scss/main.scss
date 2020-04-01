@@ -130,6 +130,16 @@
                     display: inline-block;
                 }
             }
+
+            .security-info{
+                color: #979797;
+
+                p{
+                    
+                    margin-block-start: 3px;
+                    margin-block-end: 3px;
+                }
+            }
         }        
 
         .button{

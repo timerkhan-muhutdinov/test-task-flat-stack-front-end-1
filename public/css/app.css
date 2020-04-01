@@ -256,6 +256,11 @@
         text-align: right;
         width: 48%;
         display: inline-block; }
+      .main .order-form__tab .security-info {
+        color: #979797; }
+        .main .order-form__tab .security-info p {
+          margin-block-start: 3px;
+          margin-block-end: 3px; }
     .main .order-form .button {
       font-size: 16px;
       line-height: 18px;
