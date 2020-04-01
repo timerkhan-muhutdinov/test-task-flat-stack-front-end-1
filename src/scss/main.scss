@@ -2,16 +2,47 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 5%;
     color: #5A1094;
 
     &__content{
         background: white;
-        width: 1000px;
-        height: 600px;    
+        width: 70%;
+        height: 80%;    
         display: flex;
         box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.07);
         border-radius: 5px;
+        
+        .content{     
+            &__form{
+                width: 60%;
+            }
+        }
+
+        @media (min-width: 360px) and (max-width: 479px) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            width: 90%; 
+            font-size: 16px;
+
+            .content{     
+                &__form{
+                    width: 100%;
+                }   
+            }
+        }
+        @media screen and (max-width: 360px) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            width: 85%; 
+            font-size: 12px;
+
+            .content{     
+                &__form{
+                    width: 100%;
+                }   
+            }
+        }
     }    
 
     .order-form{        
@@ -69,7 +100,9 @@
                     color: #5A1094 !important;
                   }
             }            
-        }   
+        }        
+  
+        
 
         &__tab{
             display: none;
@@ -151,9 +184,18 @@
             border-radius: 5px;
             padding: 13px 60px;
         }
+
+        @media screen and (max-width:479px) {
+            padding: 25px 10px 25px 10px;
+
+            .button{
+                width: 100%;
+            }
+        }
     }
 
     .success{
+        display: none;
         text-align: left;
         padding: 45px 40px 45px 40px;
 
@@ -162,9 +204,8 @@
         }
     }
 
-
     &__orders{
-        width: 400px;
+        width: 40%;
         background: #E6E9F0;
         //opacity: 0.5;
         padding: 20px 10px 20px 10px;
@@ -225,5 +266,24 @@
                 }
             }
         }
+
+        @media (min-width: 360px) and (max-width: 479px) {
+            width: 90%; 
+            margin: 10px;
+        }
+        @media screen and (max-width: 360px) {
+            width: 85%; 
+            margin: 10px; 
+        }
     }
 }
+
+@media screen and (min-width:480px) and (max-width:800px) {
+    /* Target landscape smartphones, portrait tablets, narrow desktops
+  
+    */
+  }
+  
+  @media screen and (max-width:479px) {
+
+  }

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Task | Flat Stack</title>
 <head>
 </head>
 
 <body>
-    <header class="header d-fx">
+    <header class="header d-fx fx-jstf-cnt-center">
         <div class="header__content d-fx">
             <a href="/" class="header__logo">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +54,7 @@
 
     <main class="main">
         <div class="main__content">
-            <section style="width: 600px;">
+            <section class="content__form">
                 <form class="order-form" onsubmit="return false" name="order" novalidate>
                     <ul class="order-form__steps">
                         <li class="steps__item"><span>Shipping</span></li>
@@ -124,7 +125,7 @@
                             <label>Address: </label>
                             <input class="input" placeholder="Street Address" name="billing.street" required>
                             <input class="input" placeholder="Apt, Suite, Bldg, Gate Code. (optional)"
-                                name="billing.address" required>
+                                name="billing.address">
                         </div>
                         <div class="form-item">
                             <div class="geo">
@@ -175,12 +176,12 @@
                         </div>
 
                         <div class="d-fx">
-                            <div class="form-item mrgn-r-10 basis-30 ">
+                            <div class="form-item mrgn-r-10 basis-40 ">
                                 <label>Expire Date: </label>
                                 <input class="input" data-mask="00 / 00" type="tel" placeholder="MM / YY"
                                     name="card.date" required>
                             </div>
-                            <div class="form-item basis-30">
+                            <div class="form-item basis-40">
                                 <label>Security Code: </label>
                                 <input class="input" data-mask="000" type="tel" placeholder="CVC" name="card.cvc"
                                     required>
@@ -209,7 +210,7 @@
                         <div class="order d-fx fx-jstf-cnt-between">
                             <div class="grow-1">
                                 <img src="https://forma-odezhda.ru/image/cache/data/kant/24cd347cb9451e93cf6ed83646335bb3-850x1300.jpg"
-                                    width="50" height="50"></image>
+                                    width="45" height="45"></image>
                             </div>
                             <div class="grow-7">
                                 <label>The Chelsea Boot</label>
@@ -222,8 +223,8 @@
                         </div>
                         <div class="order d-fx fx-jstf-cnt-between">
                             <div class="grow-1">
-                                <image src="https://ozon-st.cdn.ngenix.net/multimedia/1020428796.jpg" width="50"
-                                    height="50"></image>
+                                <image src="https://ozon-st.cdn.ngenix.net/multimedia/1020428796.jpg" width="45"
+                                    height="45"></image>
                             </div>
                             <div class="grow-7">
                                 <label>The Twill Snap Backpack</label>
@@ -237,7 +238,7 @@
                         <div class="order d-fx fx-jstf-cnt-between">
                             <div class="grow-1">
                                 <image src="https://cherrymag.ru/upload/iblock/0d9/0d9bb00ad6cb4695fdb27154d28b8db1.jpg"
-                                    width="50" height="50"></image>
+                                    width="45" height="45"></image>
                             </div>
                             <div class="grow-7">
                                 <label>The Twill Zip Tote</label>
