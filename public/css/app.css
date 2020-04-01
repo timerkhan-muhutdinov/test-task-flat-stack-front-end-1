@@ -259,15 +259,16 @@
     padding: 45px 40px 45px 40px; }
     .main .success p {
       color: #2B2525; }
-    .main .success a {
-      color: #5A1094;
-      font-weight: 400; }
 
 body {
   background-color: #F2F2F2;
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue"; }
+
+a {
+  color: #5A1094;
+  font-weight: 400; }
 
 .d-fx {
   display: flex; }

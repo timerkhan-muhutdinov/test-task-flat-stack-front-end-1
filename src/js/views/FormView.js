@@ -8,11 +8,11 @@ class FormView extends EventEmitter {
         this.button = document.getElementById("button");
         this.tabs = document.getElementsByClassName("order-form__tab");
         this.multiSteps = document.getElementsByClassName("steps__item");
-
-        console.log("FormView");
+        this.btnCopy = document.getElementById("btnCopyValue")
 
         this.refHandlerNext = this.handleNext.bind(this);
         this.button.addEventListener('click', this.refHandlerNext);
+        this.btnCopy.addEventListener('click', this.handleCopy.bind(this));
     }
 
     handleNext() {
@@ -20,9 +20,6 @@ class FormView extends EventEmitter {
     }
 
     handlePrint() {
-        //this.emit('print');
-        console.log("QWWWWWW", this.successContent);
-        
         var content = document.querySelector(".main__content .print-content").innerHTML;
 
         var WinPrint = window.open('','','left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0');
@@ -33,6 +30,16 @@ class FormView extends EventEmitter {
         WinPrint.focus();
         WinPrint.print();
         WinPrint.close();
+    }
+
+    handleCopy() {
+        let elements = this.form.elements;
+        elements["billing.fullName"].value = elements["shipping.fullName"].value;
+        elements["billing.street"].value = elements["shipping.street"].value;
+        elements["billing.address"].value = elements["shipping.address"].value;
+        elements["billing.city"].value = elements["shipping.city"].value;
+        elements["billing.country"].value = elements["shipping.country"].value;
+        elements["billing.zip"].value = elements["shipping.zip"].value;
     }
 
     handleSubmit() {

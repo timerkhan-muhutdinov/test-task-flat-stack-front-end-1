@@ -86,10 +86,10 @@
                             <input id="city" class="input" placeholder="City" name="shipping.city">
                         </div>
                         <div class="form-item d-fx">
-                            <select id="countries" class="input basis-60 grow-4 mrgn-r-10" placeholder="Country" name="shipping.country">
+                            <select class="countries input basis-60 grow-4 mrgn-r-10" placeholder="Country" name="shipping.country">
                                 <option value="Country" style="display:none;">Country</option>
                             </select>
-                            <input id="zip"  class="input basis-40" placeholder="ZIP" name="shipping.zip">
+                            <input id="zip"  class="input basis-40" pattern="\d*" maxlength="7" placeholder="ZIP" name="shipping.zip">
                         </div>
                     </div>
 
@@ -100,7 +100,7 @@
                                 <h2>Billing Address</h2>
                             </div>
                             <div class="title__link">
-                                <a href="">Same as shipping</a>
+                                <a id="btnCopyValue" href="javascript:void(0);">Same as shipping</a>
                             </div>
                         </div>
                         <div class="form-item">
@@ -117,10 +117,10 @@
                             <input id="city" class="input" placeholder="City" name="billing.city">
                         </div>
                         <div class="form-item d-fx">
-                            <select id="countries" class="input basis-60 grow-4 mrgn-r-10" placeholder="Country" name="billing.country">
+                            <select class="countries input basis-60 grow-4 mrgn-r-10" placeholder="Country" name="billing.country">
                                 <option value="Country" style="display:none; ">Country</option>
                             </select>
-                            <input id="zip"  class="input basis-40" placeholder="ZIP" name="billing.zip">
+                            <input id="zip"  class="input basis-40" pattern="\d*" maxlength="7" placeholder="ZIP" name="billing.zip">
                         </div>
                     </div>
 

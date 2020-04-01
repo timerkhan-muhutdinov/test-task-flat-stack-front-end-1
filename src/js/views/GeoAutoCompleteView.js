@@ -17,7 +17,7 @@ class GeoAutoCompleteView extends EventEmitter {
     handleGeoAutocomplete(data) {
         const inputCity = document.getElementById("city");
         const inputZip = document.getElementById("zip");
-        const options = document.querySelectorAll('#countries > option');
+        const options = document.querySelectorAll('.countries > option');
 
         options.forEach(function(item, i) {
             if(item.value.indexOf(data.results[0].address_components[6].short_name) != -1)            
@@ -32,9 +32,11 @@ class GeoAutoCompleteView extends EventEmitter {
 
     show(countries) {
 
-        const selector = document.getElementById('countries');
-
-        countries.forEach((item) => selector.append(new Option(item.name, item.code)));
+        const selectors = document.getElementsByClassName('countries');
+        
+        for (let selector of selectors) {
+            countries.forEach((item) => selector.append(new Option(item.name, item.code)));
+        }
 
     }
 }
