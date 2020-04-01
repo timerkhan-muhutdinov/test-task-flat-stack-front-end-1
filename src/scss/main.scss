@@ -7,11 +7,12 @@
 
     &__content{
         background: white;
-        width: 70%;
+        width: 50%;
         height: 80%;    
         display: flex;
         box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.07);
         border-radius: 5px;
+        margin-bottom: 20px;
         
         .content{     
             &__form{
@@ -19,7 +20,20 @@
             }
         }
 
-        @media (min-width: 360px) and (max-width: 479px) {
+        @media (min-width: 821px) and (max-width: 1024px) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            width: 70%; 
+            font-size: 16px;
+
+            .content{     
+                &__form{
+                    width: 100%;
+                }   
+            }
+        }
+
+        @media (min-width: 360px) and (max-width: 820px) {
             flex-direction: column-reverse;
             justify-content: center;
             width: 90%; 
@@ -185,7 +199,7 @@
             padding: 13px 60px;
         }
 
-        @media screen and (max-width:479px) {
+        @media screen and (max-width:820px) {
             padding: 25px 10px 25px 10px;
 
             .button{
@@ -267,7 +281,7 @@
             }
         }
 
-        @media (min-width: 360px) and (max-width: 479px) {
+        @media (min-width: 360px) and (max-width: 820px) {
             width: 90%; 
             margin: 10px;
         }
@@ -277,13 +291,3 @@
         }
     }
 }
-
-@media screen and (min-width:480px) and (max-width:800px) {
-    /* Target landscape smartphones, portrait tablets, narrow desktops
-  
-    */
-  }
-  
-  @media screen and (max-width:479px) {
-
-  }

@@ -126,11 +126,14 @@
   .header a {
     text-decoration: none; }
   .header__content {
-    width: 70%;
+    width: 50%;
     height: 100%;
     justify-content: space-between;
     align-items: center; }
-    @media screen and (max-width: 479px) {
+    @media (min-width: 821px) and (max-width: 1024px) {
+      .header__content {
+        width: 70%; } }
+    @media screen and (max-width: 820px) {
       .header__content {
         width: 90%; } }
   .header__logo {
@@ -141,7 +144,7 @@
     text-decoration: none; }
     .header__logo svg {
       margin-right: 10px; }
-    @media (min-width: 360px) and (max-width: 479px) {
+    @media (min-width: 360px) and (max-width: 820px) {
       .header__logo {
         font-size: 0.7em; } }
     @media screen and (max-width: 360px) {
@@ -181,14 +184,23 @@
   color: #5A1094; }
   .main__content {
     background: white;
-    width: 70%;
+    width: 50%;
     height: 80%;
     display: flex;
     box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.07);
-    border-radius: 5px; }
+    border-radius: 5px;
+    margin-bottom: 20px; }
     .main__content .content__form {
       width: 60%; }
-    @media (min-width: 360px) and (max-width: 479px) {
+    @media (min-width: 821px) and (max-width: 1024px) {
+      .main__content {
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 70%;
+        font-size: 16px; }
+        .main__content .content__form {
+          width: 100%; } }
+    @media (min-width: 360px) and (max-width: 820px) {
       .main__content {
         flex-direction: column-reverse;
         justify-content: center;
@@ -300,7 +312,7 @@
       border: 1px solid rgba(67, 28, 93, 0.8);
       border-radius: 5px;
       padding: 13px 60px; }
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: 820px) {
       .main .order-form {
         padding: 25px 10px 25px 10px; }
         .main .order-form .button {
@@ -346,7 +358,7 @@
         background: #F3F3F3;
         border: 1px solid #E3E3E3;
         border-radius: 1px; }
-    @media (min-width: 360px) and (max-width: 479px) {
+    @media (min-width: 360px) and (max-width: 820px) {
       .main__orders {
         width: 90%;
         margin: 10px; } }
@@ -354,11 +366,6 @@
       .main__orders {
         width: 85%;
         margin: 10px; } }
-
-@media screen and (min-width: 480px) and (max-width: 800px) {
-  /* Target landscape smartphones, portrait tablets, narrow desktops
-  
-    */ }
 
 body {
   background-color: #F2F2F2;
