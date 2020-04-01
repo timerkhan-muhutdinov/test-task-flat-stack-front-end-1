@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: [
         './src/js/index',
-        './src/scss/style.scss'
+        './src/scss/index.scss'
     ],
 
     output: {

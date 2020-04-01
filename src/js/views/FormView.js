@@ -145,7 +145,7 @@ class FormView extends EventEmitter {
             
             if (!inputs[i].reportValidity() && valid) {
                 
-                inputs[i].setCustomValidity(`Please enter recipient ${inputs[i].placeholder.toLowerCase()}`);
+                inputs[i].setCustomValidity(`Please enter recipient selector`);
                 valid = false;
             }
         }
