@@ -4,7 +4,7 @@
 [Ссылка на сайт](https://timerkhan-muhutdinov.github.io/test-task.flat-stack.front-end.io/)
 
 
-- [TEST.md](TEST.md) – Описание задания
+- [TASK.md](TASK.md) – Описание задания
 
 
 ### `npm run start`
