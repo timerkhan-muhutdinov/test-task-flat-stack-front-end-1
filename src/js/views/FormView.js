@@ -109,8 +109,10 @@ class FormView extends EventEmitter {
     showSuccess(data) {
         console.log("showSuccess", data);
         this.form.style.display = "none";
+        const success = document.querySelector(".main__content .success");
+        success.style.display = "block";
 
-        document.querySelector(".main__content .success").innerHTML = `<div class="print-content"><h2>Thank you for your order!</h2>
+        success.innerHTML = `<div class="print-content"><h2>Thank you for your order!</h2>
         <p><strong>Order number is: ${data.numberOrder} </strong></p>
         <p>Your will recieve an email confirmation <br>
             shortly to <a href="mailto:jonathan.smith@gmail.com">jonathan.smith@gmail.com</a></p>
@@ -143,7 +145,7 @@ class FormView extends EventEmitter {
             
             if (!inputs[i].reportValidity() && valid) {
                 
-                inputs[i].setCustomValidity(`Please enter recipient ${inputs[i].placeholder.toLowerCase()}`);
+                inputs[i].setCustomValidity(`Please enter recipient selector`);
                 valid = false;
             }
         }
