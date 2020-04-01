@@ -10,6 +10,10 @@ body {
     font-family: "Helvetica Neue";
 }
 
+h1,h2,h3,h4,h5,h6,h7,h8{
+    font-weight: normal;
+}
+
 a{
     color: #5A1094;
     font-weight: 400;
@@ -33,6 +37,12 @@ a{
     }
     .grow-5{
         flex-grow: 5;
+    }
+    .grow-6{
+        flex-grow: 6;
+    }
+    .grow-7{
+        flex-grow: 7;
     }
 
     .basis-10{
