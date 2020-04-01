@@ -237,6 +237,18 @@
           font-size: 13px;
           line-height: 12px;
           color: #777879; }
+        .main .order-form__tab .form-item .geo {
+          position: relative; }
+          .main .order-form__tab .form-item .geo input {
+            width: 100%;
+            padding-left: 15px; }
+          .main .order-form__tab .form-item .geo a {
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            cursor: pointer; }
       .main .order-form__tab .title__heading {
         width: 50%;
         display: inline-block; }
