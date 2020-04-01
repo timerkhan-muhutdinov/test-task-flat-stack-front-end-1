@@ -10,13 +10,13 @@ module.exports = {
     ],
 
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, 'docs'),
         filename: 'js/app.js',
         publicPath: './'
     },
 
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
+        contentBase: path.join(__dirname, 'docs'),
         port: 3000
     },
 
