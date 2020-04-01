@@ -19,6 +19,22 @@ class FormView extends EventEmitter {
         this.emit('changeTab');
     }
 
+    handlePrint() {
+        //this.emit('print');
+        console.log("QWWWWWW", this.successContent);
+        
+        var content = document.querySelector(".main__content .print-content").innerHTML;
+
+        var WinPrint = window.open('','','left=50,top=50,width=800,height=640,toolbar=0,scrollbars=1,status=0');
+        WinPrint.document.write('');
+        WinPrint.document.write(content);
+        WinPrint.document.write('');
+        WinPrint.document.close();
+        WinPrint.focus();
+        WinPrint.print();
+        WinPrint.close();
+    }
+
     handleSubmit() {
         let elements = this.form.elements;
         const data = {
@@ -80,15 +96,17 @@ class FormView extends EventEmitter {
     showSuccess(data){
         console.log("showSuccess", data);
         this.form.style.display = "none";
-        //document.querySelector(".main__content .success").style.display = "block";
 
-        document.querySelector(".main__content .success").innerHTML = `<h2>Thank you for your order!</h2>
+        document.querySelector(".main__content .success").innerHTML = `<div class="print-content"><h2>Thank you for your order!</h2>
         <p><strong>Order number is: ${data.numberOrder} </strong></p>
         <p>Your will recieve an email confirmation <br>
             shortly to <a href="mailto:jonathan.smith@gmail.com">jonathan.smith@gmail.com</a></p>
         <p>Estimated delivery Day is <br>
-            <b>${data.deliveryDate.toDateString()}</b></p>
-        <a href="">Print Recipe</a>`;
+            <b>${data.deliveryDate.toDateString()}</b></p></div>
+        <a id="btnPrint" href="javascript:void(0);">Print Recipe</a>`;
+        
+        var btnPrint = document.querySelector("#btnPrint");
+        btnPrint.addEventListener('click', this.handlePrint.bind(this));
     }
 }
 
