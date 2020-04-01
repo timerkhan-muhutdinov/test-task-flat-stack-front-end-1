@@ -17,6 +17,15 @@ h1,h2,h3,h4,h5,h6,h7,h8{
 a{
     color: #5A1094;
     font-weight: 400;
+
+    &:hover {
+        opacity: 0.7; 
+    }
+}
+
+button:hover {
+    opacity: 0.9; 
+    cursor: pointer;
 }
 
 .d-fx{
