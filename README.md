@@ -1,6 +1,8 @@
 # Тестовое задание в компанию Flat-Stack на Frontend разработчика
 
-Тестовое задание было выполнено в 1 варианте
+Тестовое задание было выполнено в 1 варианте и опубликовано на github pages:
+[Ссылка на сайт](https://timerkhan-muhutdinov.github.io/test-task.flat-stack.front-end.io/)
+
 
 - [TEST.md](TEST.md) – Описание задания
 
